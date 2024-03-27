@@ -11,24 +11,24 @@
 
 #### NENHUM ARGUMENTO
 
-- ADD
-- SUB
-- TIMES
-- DIV
-- MOD
-- AND
-- OR
-- NOT
-- NOR
-- NAND
-- XOR
-- GREATER
-- LESS
-- EQUAL
-- ISNIL
-- ISPOS
-- ISNEG
-- CMP
+- [x] ADD
+- [x] SUB
+- [x] TIMES
+- [x] DIV
+- [x] MOD
+- [x] AND
+- [x] OR
+- [x] NOT
+- [x] NOR
+- [x] NAND
+- [x] XOR
+- [x] GREATER
+- [x] LESS
+- [x] EQUAL
+- [x] ISNIL
+- [x] ISPOS
+- [x] ISNEG
+- [x] CMP
 - RST
 - LINK
 - STOP
