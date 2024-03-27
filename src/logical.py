@@ -27,7 +27,9 @@ class Logical(ABC):
         :return: None
         """
         try:
-            value = stack.pop() or stack.pop()
+            first_value = stack.pop()
+            second_value = stack.pop()
+            value = 1 if first_value or second_value else 0
             stack.push(int(value))
         except IndexError:
             raise IndexError("Stack is empty")
@@ -35,12 +37,13 @@ class Logical(ABC):
     @abstractmethod
     def not_(stack: Stack) -> None:
         """
-        This method pops a value from the stack and pushes its logical NOT back to the stack
+        This method pops a value from the stack and if the value is non-zero, 
+            pushes 0 onto the stack. Otherwise, pushes 1.
         :param stack: Stack object
         :return: None
         """
         try:
-            value = not stack.pop()
+            value = 0 if stack.pop() else 1
             stack.push(value)
         except IndexError:
             raise IndexError("Stack is empty")
@@ -48,7 +51,8 @@ class Logical(ABC):
     @abstractmethod
     def xor(stack: Stack) -> None:
         """
-        This method pops two values from the stack and pushes their XOR back to the stack
+        This method pops two values from the stack and pushes 1 if only one of the values is non-zero,
+            otherwise pushes 0.
         :param stack: Stack object
         :return: None
         """
