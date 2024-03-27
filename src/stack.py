@@ -14,3 +14,6 @@ class Stack:
 
     def get_stack_pointer(self) -> int:
         return len(self.stack)
+
+    def top(self) -> int:
+        return self.stack[-1]
