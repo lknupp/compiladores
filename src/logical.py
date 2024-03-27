@@ -1,24 +1,26 @@
 from .stack import Stack
+from abc import ABC, abstractmethod
 
 
-class Logical:
+class Logical(ABC):
     """
     This class contains methods for logical operations
     """
-
-    def and_(self, stack: Stack) -> None:
+    @abstractmethod
+    def and_(stack: Stack) -> None:
         """
         This method pops two values from the stack and pushes their logical AND back to the stack
         :param stack: Stack object
         :return: None
         """
         try:
-            value = stack.pop() and stack.pop()
+            value = 1 if stack.pop() and stack.pop() else 0
             stack.push(int(value))
         except IndexError:
             raise IndexError("Stack is empty")
 
-    def or_(self, stack: Stack) -> None:
+    @abstractmethod
+    def or_(stack: Stack) -> None:
         """
         This method pops two values from the stack and pushes their logical OR back to the stack
         :param stack: Stack object
@@ -30,7 +32,8 @@ class Logical:
         except IndexError:
             raise IndexError("Stack is empty")
 
-    def not_(self, stack: Stack) -> None:
+    @abstractmethod
+    def not_(stack: Stack) -> None:
         """
         This method pops a value from the stack and pushes its logical NOT back to the stack
         :param stack: Stack object
@@ -42,7 +45,8 @@ class Logical:
         except IndexError:
             raise IndexError("Stack is empty")
 
-    def xor(self, stack: Stack) -> None:
+    @abstractmethod
+    def xor(stack: Stack) -> None:
         """
         This method pops two values from the stack and pushes their XOR back to the stack
         :param stack: Stack object
@@ -54,7 +58,8 @@ class Logical:
         except IndexError:
             raise IndexError("Stack is empty")
 
-    def nand(self, stack: Stack) -> None:
+    @abstractmethod
+    def nand(stack: Stack) -> None:
         """
         This method pops two values from the stack and pushes their NAND back to the stack
         :param stack: Stack object
@@ -66,7 +71,8 @@ class Logical:
         except IndexError:
             raise IndexError("Stack is empty")
 
-    def nor(self, stack: Stack) -> None:
+    @abstractmethod
+    def nor(stack: Stack) -> None:
         """
         This method pops two values from the stack and pushes their NOR back to the stack
         :param stack: Stack object
